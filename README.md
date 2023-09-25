@@ -14,8 +14,8 @@ For example, simply you can make adversarial examples by adding gaussian noise.
 
 <table width="100%">
  <td align="center">
-  <img alt="image" src="https://github.com/jshim0978/color_poisoning/assets/43781129/243ff241-64ab-4885-ba9e-885e4c179fd3"/>
-  <p>asdf</p>
+  <img alt="image" src="https://github.com/seungguJ/NNproject_KU/assets/127372942/9b1e80e2-a176-49af-abcd-9be49d8d911c"/>
+  <p>Original iamge</p>
  </td>
  <td align="center">
   <img alt="image" src="https://github.com/jshim0978/color_poisoning/assets/43781129/243ff241-64ab-4885-ba9e-885e4c179fd3"/>
