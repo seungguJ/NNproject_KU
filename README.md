@@ -1,4 +1,4 @@
-# Discovering deficiencies of neural networks
+# Discovering deficiencies of deep neural networks
 ## Goal
 - Find adversarial examples which are added human imperceptible noise.
   - Restriction on L<sub>2</sub> norm : 8/255
@@ -10,6 +10,10 @@ Thanks to the outstanding performance and stable capability, deep neural network
 However in recent, deep neural networks are found to be sensitive to adversarial perturbations. Deep neural networks output different results when pertubed images get into models. It can cause severe problems in security sensitive domain like finance, medical diagnosis and self-driving cars. So it is important to discover deficiencies of deep neural networks to make more robust models.
 
 Since the noise is human imperceptible, there is a restriction on noise. If we measure the magnitude of noise based on L<sub>p</sub> norm, we can take upper bound to the norm.
+
+Simply we can make adversarial image to add a gaussian noise to the image. To discover deficiencies of deep neural networks, we have to find effective and meaningful noise.
+
+So define this project to find effective and meaningful noise. (We can comapre results by estimating accuracy of normal images and adversarial images)
 
 <table width="100%">
  <td align="center">
