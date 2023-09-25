@@ -15,6 +15,7 @@ Simply we can make adversarial image to add a gaussian noise to the image. To di
 
 So define this project to find effective and meaningful noise. (We can comapre results by estimating accuracy of normal images and adversarial images)
 
+- Example
 <table width="100%">
  <td align="center">
   <img alt="image" src="https://github.com/seungguJ/NNproject_KU/assets/127372942/9b1e80e2-a176-49af-abcd-9be49d8d911c"/>
