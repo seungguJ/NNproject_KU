@@ -15,7 +15,7 @@ Simply we can make adversarial image to add a gaussian noise to the image. To di
 
 So define this project to find effective and meaningful noise. (We can comapre results by estimating accuracy of normal images and adversarial images)
 
-- Example
+### Example
 <table width="100%">
  <td align="center">
   <img alt="image" src="https://github.com/seungguJ/NNproject_KU/assets/127372942/9b1e80e2-a176-49af-abcd-9be49d8d911c"/>
@@ -37,6 +37,7 @@ So define this project to find effective and meaningful noise. (We can comapre r
  </td>
 </table>
 
+
 ## Dataset description (CIFAR-10)
 The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
 
@@ -44,7 +45,7 @@ The dataset is divided into five training batches and one test batch, each with 
 
 cited from https://www.cs.toronto.edu/~kriz/cifar.html
 
-You can download this dataset using pytorch
+You can download this dataset using python code
 
     import torchvision
     # transforms = torchvision.transforms.Compose([torchvision.tranforms.ToTensor()])
