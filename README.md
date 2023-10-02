@@ -1,7 +1,7 @@
 # Discovering deficiencies of deep neural networks
 ## Goal
 - Find adversarial examples which are added human imperceptible noise.
-  - Restriction on L<sub>2</sub> norm : 8/255
+  - Restriction on L<sub>2</sub> norm : 1
   - Restriction on L<sub>inf</sub> norm : 0.1
 
 ## Motivation & Introduction
