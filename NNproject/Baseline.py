@@ -1,6 +1,7 @@
 import torch
 import torchvision.transforms as transforms
 import torchvision
+from ResNet import *
 
 def attack(imgs, l2 = True, eps = 1, device=False):
     if l2:
@@ -29,7 +30,12 @@ batch_size = 100
 testset = torchvision.datasets.CIFAR10(root='...data_path...', train=False, download=False, transform=transform)
 testloader = torch.utils.data.DataLoader(testset,batch_size=batch_size, shuffle=False)
 
-model = torch.load('...model_path.../resnet18_cifar10.pt')
+model = ResNet18() ## original model
+checkpoint_path2 = './resnet18_cifar10'
+checkpoint = torch.load(checkpoint_path2)['net']
+for key in list(checkpoint.keys()):
+    checkpoint[key.replace('module.', '')] = checkpoint.pop(key)
+model.load_state_dict(checkpoint, strict=False)## original model
 model = model.to(device)
 model.eval()
 
