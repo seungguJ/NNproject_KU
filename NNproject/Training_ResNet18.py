@@ -4,6 +4,7 @@ import torchvision
 import torch.nn as nn
 import torch.optim as optim
 import torchvision.models as models
+from ResNet import *
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print(f'{device} is available')
@@ -19,14 +20,13 @@ trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
 testset = torchvision.datasets.CIFAR10(root='...data_path...', train=False, download=True, transform=transform)
 testloader = torch.utils.data.DataLoader(testset,batch_size=64, shuffle=False)
 
-model = models.resnet18(pretrained=False)
+model = ResNet18()
 model.to(device)
 
-num_ftrs = model.fc.in_features
-model.fc = nn.Linear(num_ftrs, 10).to(device)
-
 critertion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(model.parameters(),lr=0.001,momentum=0.9)
+optimizer = optim.SGD(model.parameters(), lr=0.1,
+                    momentum=0.9, weight_decay=5e-4)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
 
 num_epochs = 200
 loss_ = []
@@ -50,6 +50,7 @@ for epoch in range(num_epochs):
     
     loss_.append(running_loss/n)
     print(f'{epoch+1} loss: {running_loss/n}')
+    scheduler.step()
     
 # prediction part
 correct = 0
